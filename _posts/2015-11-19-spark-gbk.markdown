@@ -5,22 +5,20 @@ date:   2015-11-19 17:01:00
 categories: scala spark
 ---
 
-{% highlight scala %}
+{% highlight java %}
 import org.apache.hadoop.io.{Text, LongWritable}
 import org.apache.hadoop.mapred.TextInputFormat
 import org.apache.spark.{SparkConf, SparkContext}
-
 object MyApp extends App {
   val conf = new SparkConf().setAppName("Simple Application").setMaster("local[*]").set("spark.driver.maxResultSize", "8g").set("spark.executor.memory", "20g")
   val sc = new SparkContext(conf)
-
   val beginTime = System.currentTimeMillis()
   val total = sc.hadoopFile("hdfs://localhost:9000/bd/v3.1_tran_s510000000_141208172049.txt", classOf[TextInputFormat], classOf[LongWritable], classOf[Text], sc.defaultParallelism).flatMap { pair ⇒
     val line = new String(pair._2.getBytes, "GBK")
     val values = line.split( """\s\|\s""")
     if (values.length > 1) Some(values) else None
   }.foreach(as ⇒ println(as.mkString(" | ")))
-
+  
   println(total)
   println(System.currentTimeMillis() - beginTime)
 }

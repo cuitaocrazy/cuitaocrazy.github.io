@@ -31,6 +31,6 @@ ajbbb
 
 #+begin_src scala
 object MyApp extends App {
-    void obj;
+    val obj = "Hello!!!";
 }
 #+end_src

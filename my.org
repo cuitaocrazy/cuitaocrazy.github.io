@@ -29,7 +29,7 @@
 ajbbb
 [[http://d.youth.cn/shrgch/201601/W020160118281240743530.jpg]]
 
-#+begin_src javascript
+#+begin_src scala
 public object MyApp extends App {
     public void obj;
 }

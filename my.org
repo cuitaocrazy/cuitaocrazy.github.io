@@ -31,6 +31,6 @@ ajbbb
 
 #+begin_src javascript
 public object MyApp extends App {
-public void obj;
+    public void obj;
 }
 #+end_src

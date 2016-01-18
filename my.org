@@ -22,14 +22,17 @@
 #+END_CENTER
 
 #+begin_src org
-#+INCLUDE:"~/my.org" src org
+,#+INCLUDE:"~/my.org" src org
 
 #+end_src
 
 ajbbb
+
+#+CAPTION: 测试一下图片
+#+LABEL: fig:SED_HR5049
 [[http://d.youth.cn/shrgch/201601/W020160118281240743530.jpg]]
 
-#+begin_src scala
+#+begin_src scala -n
 object MyApp extends App {
     val obj = "Hello!!!"
 }

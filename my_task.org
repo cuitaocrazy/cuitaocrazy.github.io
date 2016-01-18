@@ -1,3 +1,6 @@
+#+TITLE: 我的计划
+#+AUTHOR: 崔涛
+
 * emacs                                                                         :工作:
 ** jdee
 *** TODO java 项目构建

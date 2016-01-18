@@ -1,0 +1,56 @@
+* emacs                                                                         :工作:
+** jdee
+*** TODO java 项目构建
+**** DONE 文件编译
+CLOSED: [2016-01-18 Mon 15:24]
+:LOGBOOK:
+- State "DONE"       from "NEXT"       [2016-01-18 Mon 15:24]
+:END:
+必要条件：
+| 插件        | 描述             |
+|-------------+------------------|
+| jdee        | [[https://github.com/jdee-emacs/jdee][jdee项目]]         |
+| jdee server | [[https://github.com/jdee-emacs/jdee-server][jdee server 项目]] |
+命令：jdee-compile
+
+详细描述:
+- 创建代码:MyClass.java
+#+begin_src java
+class MainClass {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!!!");
+    }
+}
+#+End_src
+- 编译jdee server
+#+begin_src bshell
+#sudo port install maven3
+git clone https://github.com/jdee-emacs/jdee-server.git {JDEE_SERVER_DIR}
+cd {JDEE_SERVER_DIR}
+mvn -DskipTests=true assembly:assembly
+#+end_src
+- 下载jdee到emacs
+#+begin_src emacs lisp
+(package-install jdee)
+(jdee-server-dir {JDEE_SERVER_DIR})
+(jdee-mode)
+#+end_src
+- 编译
+MainClass.java Buffer必须是当前buffer, *M+x* 输入 *jdee-compile* 。编译成功后 *M+x* 输入 *jdee-run*
+执行代码。
+**** 项目编译
+**** classpath
+** org-mode
+*** 基础知识
+*** GTD(Getting Things Done)
+** cedet
+*** ede
+* andriod系统                                                                   :工作:
+** emacs构建
+* 哲学                                                                          :学习:
+** 西方哲学史
+** 精神现象学
+** 小逻辑学
+* 学英语                                                                        :学习:
+** 词根
+** 语法
